@@ -54,7 +54,8 @@ Entre essas dificuldades estão:
 
 Pensando nisso, o BARRACUDA propõe colocar esse processo dentro do celular do usuário, permitindo que ele realize sua doação através de uma conversa com um chatbot.
 
----
+---<img width="4606" height="8192" alt="Donation Management Flow-2026-10-07-001746" src="https://github.com/user-attachments/assets/9426a08d-308f-4d94-979b-06abf0382663" />
+
 
 ## 💡 Solução com Inteligência Artificial
 
@@ -194,3 +195,4 @@ Usuário confirma as informações
 Doação registrada
    ↓
 Solicitação de coleta
+
