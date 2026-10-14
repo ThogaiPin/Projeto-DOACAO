@@ -1,4 +1,4 @@
-# 🐟 Projeto BARRACUDA
+# 🐟 Projeto DOACÃO
 
 ## Chatbot para Doações de animais
 
@@ -8,7 +8,7 @@ Projeto de Extensão — Análise e Desenvolvimento de Sistemas
 
 ## 📌 Sobre o Projeto
 
-O **Projeto DOACão** é uma aplicação desenvolvida em **Java** com o objetivo de facilitar e humanizar o processo de doações por meio de um chatbot com Inteligência Artificial.
+O **Projeto DOACÃO** é uma aplicação desenvolvida em **Java** com o objetivo de facilitar e humanizar o processo de doações por meio de um chatbot com Inteligência Artificial.
 
 A proposta é permitir que pessoas que possuam filhotes, ou sem condições de manter um, itens que não utilizam mais, produtos destinados a pets e outros, possam realizar uma doação de maneira simples, rápida e acessível através do celular.
 
