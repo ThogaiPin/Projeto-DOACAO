@@ -1,6 +1,6 @@
 # 🐟 Projeto BARRACUDA
 
-## Chatbot para Doações
+## Chatbot para Doações de animais
 
 Projeto de Extensão — Análise e Desenvolvimento de Sistemas
 
@@ -8,18 +8,17 @@ Projeto de Extensão — Análise e Desenvolvimento de Sistemas
 
 ## 📌 Sobre o Projeto
 
-O **Projeto BARRACUDA** é uma aplicação desenvolvida em **Java** com o objetivo de facilitar e humanizar o processo de doações por meio de um chatbot com Inteligência Artificial.
+O **Projeto DOACão** é uma aplicação desenvolvida em **Java** com o objetivo de facilitar e humanizar o processo de doações por meio de um chatbot com Inteligência Artificial.
 
-A proposta é permitir que pessoas que possuem objetos ou itens que não utilizam mais possam realizar uma doação de maneira simples, rápida e acessível através do celular.
+A proposta é permitir que pessoas que possuam filhotes, ou sem condições de manter um, itens que não utilizam mais, produtos destinados a pets e outros, possam realizar uma doação de maneira simples, rápida e acessível através do celular.
 
-Entre os itens que podem ser doados estão:
+O que pode ser doado:
 
-- Sofás
-- Estantes
-- Roupas
-- Brinquedos
-- Móveis
-- Outros itens em boas condições de uso
+- Pets autorizados pelo governo
+- Roupas para pets 
+- Brinquedos para pets 
+- Móveis para pets 
+- Outros itens em boas condições de uso para pets
 
 O projeto busca utilizar a tecnologia para aproximar quem deseja doar de quem pode receber a doação, tornando o processo mais organizado e acessível.
 
@@ -27,9 +26,11 @@ O projeto busca utilizar a tecnologia para aproximar quem deseja doar de quem po
 
 ## 🌎 ODS Escolhido
 
-### ODS 17 — Parcerias e Meios de Implementação
+### ODS 03 — Saúde e bem estar
+### ODS 14 — Vida na água
+### ODS 15 — Vida terrestre 
 
-O Projeto BARRACUDA está relacionado à **ODS 17 — Parcerias e Meios de Implementação**.
+O Projeto DOACÃO está relacionado às ODS supracitadas.
 
 O objetivo é utilizar a tecnologia como uma ferramenta para facilitar a colaboração entre pessoas, instituições e organizações envolvidas no processo de doação.
 
@@ -41,7 +42,7 @@ A aplicação busca contribuir para a criação de uma rede de colaboração, to
 
 O processo de doação pode ser burocrático e pouco acessível para algumas pessoas.
 
-Uma pessoa pode possuir um sofá, uma estante, roupas, brinquedos ou outros objetos que não utiliza mais, mas pode encontrar dificuldades para realizar essa doação.
+Uma pessoa pode possuir um filhote, uma estante, roupas, brinquedos ou outros objetos que não utiliza mais, mas pode encontrar dificuldades para realizar essa doação.
 
 Entre essas dificuldades estão:
 
@@ -52,14 +53,14 @@ Entre essas dificuldades estão:
 - Informar o endereço para coleta;
 - Organizar o transporte do item.
 
-Pensando nisso, o BARRACUDA propõe colocar esse processo dentro do celular do usuário, permitindo que ele realize sua doação através de uma conversa com um chatbot.
+Pensando nisso, o DOACÃO propõe colocar esse processo dentro do celular do usuário, permitindo que ele realize sua doação através de uma conversa com um chatbot.
 
 ---<img width="4606" height="8192" alt="Donation Management Flow-2026-10-07-001746" src="https://github.com/user-attachments/assets/9426a08d-308f-4d94-979b-06abf0382663" />
 
 
 ## 💡 Solução com Inteligência Artificial
 
-A solução proposta pelo Projeto BARRACUDA é um chatbot com **Inteligência Artificial**, desenvolvido utilizando **Java**.
+A solução proposta pelo Projeto DOACÃO é um chatbot com **Inteligência Artificial**, desenvolvido utilizando **Java**.
 
 Ao entrar na aplicação, o usuário não precisará preencher diversos formulários.
 
@@ -67,29 +68,29 @@ Em vez disso, poderá conversar diretamente com o chatbot e informar as informa�
 
 Por exemplo:
 
-    BARRACUDA: Olá! O que você gostaria de doar?
+    DOACÃO: Olá! O que você gostaria de doar?
 
     Usuário: Quero doar um sofá.
 
-    BARRACUDA: Perfeito! Qual é o endereço para a coleta?
+    DOACÃO: Perfeito! Qual é o endereço para a coleta?
 
     Usuário: Rua das Flores, 100.
 
-    BARRACUDA: Qual data você gostaria que a coleta fosse realizada?
+    DOACÃO: Qual data você gostaria que a coleta fosse realizada?
 
     Usuário: Dia 15.
 
-    BARRACUDA: Certo! Vou confirmar os dados da sua doação.
+    DOACÃO: Certo! Vou confirmar os dados da sua doação.
 
     Item: Sofá
     Endereço: Rua das Flores, 100
     Data: Dia 15
 
-    BARRACUDA: Os dados estão corretos?
+    DOACÃO: Os dados estão corretos?
 
     Usuário: Sim.
 
-    BARRACUDA: Doação registrada com sucesso!
+    DOACÃO: Doação registrada com sucesso!
 
 A Inteligência Artificial será responsável por interpretar a conversa e identificar as informações importantes fornecidas pelo usuário.
 
@@ -133,7 +134,7 @@ O chatbot deverá ser capaz de:
 
 ## 👥 Público-Alvo
 
-O público-alvo do Projeto BARRACUDA são principalmente **adultos que possuem objetos ou itens que desejam doar**.
+O público-alvo do Projeto DOACÃO são principalmente **adultos que possuem pets ou itens que desejam doar**.
 
 Entre os possíveis usuários estão pessoas que:
 
@@ -169,14 +170,14 @@ Facilitar o processo de doação através de um chatbot desenvolvido em **Java**
 
 ## 📱 Funcionamento do Sistema
 
-O funcionamento básico do BARRACUDA será baseado na comunicação entre o usuário e o chatbot.
+O funcionamento básico do DOACÃO será baseado na comunicação entre o usuário e o chatbot.
 
 ### Fluxo da aplicação
 
 ```text
 Usuário
    ↓
-Inicia o BARRACUDA
+Inicia o DOACÃO
    ↓
 Chatbot inicia a conversa
    ↓
