@@ -4,3 +4,207 @@
     box-sizing: border-box;
 
 }
+
+body {
+
+    margin: 0;
+    font-family: arial, sans-serif;
+    background-color: #F8F5ED;
+    color: #35483A;
+
+}
+
+/* Cabeçalho */
+header.cabecalho {
+
+    position: relative;
+    background-color: #DCE7D5;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+}
+
+/* Logo do site */
+.logo-link {
+
+    flex-shrink: 0;
+
+}
+
+.logo-link img {
+
+    width: 70px;
+    height: 70px;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+/* Nome e slogan */
+.identidade {
+
+    flex: 1;
+
+}
+
+header h1 {
+
+    margin: 0;
+    font-size: 32px;
+    color: #3F6748;
+
+}
+
+header p {
+
+    margin: 5px 0 0;
+    font-size: 14px;
+
+}
+
+/* Menu de navegação */
+.menu-principal {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.menu-principal a {
+
+    color: #35483A;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.menu-principal a:hover {
+
+    color: #527B57;
+    text-decoration: underline;
+
+}
+
+/* Conteúdo principal */
+main {
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+
+}
+
+section {
+
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+
+}
+
+/* Apresentação inicial */
+.apresentacao {
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 400px;
+
+}
+
+.texto-apresentacao {
+
+    flex: 1;
+
+}
+
+.texto-apresentacao h2 {
+
+    font-size: 32px;
+    margin-top: 0;
+
+}
+
+.texto-apresentacao p {
+
+    font-size: 17px;
+    line-height: 1.6;
+
+}
+
+.botoes-apresentacao {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.botoes-apresentacao button {
+
+    margin: 8px 0 0;
+
+}
+
+.imagem-apresentacao {
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imagem-apresentacao img {
+
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+
+}
+
+h2 {
+
+    color: #3F6748;
+
+}
+
+/* Botões */
+button {
+
+    background-color: #527B57;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 8px 0 0;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+button:hover {
+
+    background-color: #3F6748;
+
+}
+
+/* Rodapé */
+footer {
+
+    background-color: #DCE7D5;
+    text-align: center;
+    padding: 20px;
+
+}
