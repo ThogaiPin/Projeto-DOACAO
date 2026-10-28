@@ -17,7 +17,11 @@ body {
 /* Cabeçalho */
 header.cabecalho {
 
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #DCE7D5;
     padding: 20px 30px;
     display: flex;
@@ -97,7 +101,7 @@ main {
 
     max-width: 1000px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 140px 20px 30px;
 
 }
 
@@ -111,27 +115,31 @@ section {
 }
 
 /* Apresentação inicial */
+
 .apresentacao {
 
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    min-height: 400px;
+    text-align: center;
+    gap: 15px;
+    min-height: auto;
+    padding: 30px;
 
 }
 
+
 .texto-apresentacao {
 
-    flex: 1;
+    width: 100%;
+    text-align: center;
 
 }
 
 .texto-apresentacao h2 {
 
     font-size: 32px;
-    margin-top: 0;
+    margin: 0 0 10px;
 
 }
 
@@ -139,14 +147,18 @@ section {
 
     font-size: 17px;
     line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
 
 }
 
 .botoes-apresentacao {
 
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 15px;
 
 }
 
@@ -156,9 +168,19 @@ section {
 
 }
 
+.texto-sobre-auberto {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
 .imagem-apresentacao {
 
-    flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,6 +193,22 @@ section {
     width: 100%;
     max-width: 380px;
     height: auto;
+
+}
+
+.texto-sobre-auberto h2 {
+
+    font-size: 24px;
+    margin: 0 0 10px;
+
+}
+
+.texto-sobre-auberto p {
+
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 380px;
+    margin: 0 auto;
 
 }
 
@@ -207,4 +245,291 @@ footer {
     text-align: center;
     padding: 20px;
 
+}
+
+/* Seção como ajudar */
+.como-ajudar {
+
+    text-align: center;
+
+}
+
+.como-ajudar h2 {
+
+    font-size: 30px;
+    margin-top: 0;
+
+}
+
+.descricao-como-ajudar {
+
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 30px;
+
+}
+
+/* Organização dos cartões */
+.cartoes-ajuda {
+
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
+/* Cada cartão */
+.cartao-ajuda {
+
+    flex: 1;
+    padding: 25px;
+    background-color: #F8F5ED;
+    border: 2px solid #DCE7D5;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cartao-ajuda h3 {
+
+    color: #3F6748;
+    font-size: 22px;
+    margin-top: 0;
+
+}
+
+.cartao-ajuda p {
+
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+
+}
+
+.cartao-ajuda button {
+
+    margin-top: 15px;
+
+}
+
+/* Carrossel de animais para adoção */
+.carrossel-adocao {
+
+    background-color: #F8F5ED;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.titulo-carrossel {
+
+    max-width: 700px;
+    margin: 0 auto 30px;
+
+}
+
+.subtitulo-carrossel {
+
+    color: #527B57;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+.titulo-carrossel h2 {
+
+    font-size: 30px;
+    margin: 10px;
+
+}
+
+.titulo-carrossel > p:last-child {
+
+    line-height: 1.6;
+
+}
+
+.janela-carrossel {
+
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.trilho-carrossel { 
+
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    transition: transform 0.5s ease;
+
+}
+
+.cartao-animal { 
+
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 2px solid #DCE7D5;
+    border-radius: 16px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cartao-animal > img {
+
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+
+}
+
+.informacoes-animal {
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+
+}
+
+.etiqueta-demonstracao {
+
+    background-color: #DCE7D5;
+    color: #35483A;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 9px;
+    border-radius: 20px;
+
+}
+
+.informacoes-animal h3 {
+
+    color: #3F6748;
+    font-size: 22px;
+    margin: 12px 0 8px;
+
+}
+
+.informacoes-animal p {
+
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 4px 0;
+
+}
+
+.cidade-animal {
+
+    color: #647166;
+
+}
+
+.informacoes-animal button {
+
+    margin-top: auto;
+    padding: 10px 14px;
+    font-size: 14px;
+
+}
+
+.informacoes-animal button:disabled {
+
+    opacity: 0.65;
+    cursor: not-allowed;
+
+}
+
+.controles-carrossel {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 25px;
+
+}
+
+button.seta-carrossel {
+
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+
+}
+
+.indicador-carrossel {
+
+    min-width: 55px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.aviso-demonstracao {
+
+    margin: 20px 0 0;
+    font-size: 12px;
+    color: #647166;
+
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 800px) {
+
+    .cartao-animal {
+        flex-basis: calc((100% - 20px) / 2);
+
+    }
+}
+
+@media (max-width: 560px) {
+
+    .cartao-animal {
+        flex-basis: 100%;
+
+    }
+
+    .cartao-animal > img {
+
+        height: 230px;
+
+    }
+
+    .titulo-carrossel h2 {
+
+        font-size: 25px;
+
+    }
+
+    .carrossel-adocao {
+
+        padding: 22px;
+
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .trilho-carrossel {
+        transition: none;
+        
+    }
 }
