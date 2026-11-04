@@ -5,6 +5,7 @@
 Projeto de Extensão — Análise e Desenvolvimento de Sistemas
 
 ---
+<img width="7475" height="7855" alt="Doacao Management Class Model-2026-11-04-210917" src="https://github.com/user-attachments/assets/3e50c807-b953-45ac-985c-a4e33f23ef74" />
 
 ## 📌 Sobre o Projeto
 
