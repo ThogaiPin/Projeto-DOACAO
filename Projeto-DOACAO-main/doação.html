@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+ <body>
+    <header class="cabecalho">
+        <a href="#inicio" class="logo-link">
+           <img src="img/logo.png" alt="Logo Doacão">
+        </a>
+
+ <div class="identidade">
+   <h1>DOACÃO</h1> 
+   <p>Conectando animais a novos lares.</p>
+</div>
+
+    </header>  
+    <main>
+   <section class="diretrizes" id="diretrizes">
+    <h2>Antes de doar, confira!</h2>
+    
+     <p>
+        Doar um animal é um ato de responsabilidade e carinho.
+        Confira os principais cuidados antes de encontrar um novo lar.
+    </p>
+
+<div class = "lista-diretrizes">
+    <article class="item-diretriz">
+          <h3>1. Saúde do animal</h3>
+            <p>
+                Informe sobre vacinas, vermifugação, tratamentos
+                e problemas de saúde conhecidos.
+            </p>
+    </article>
+
+<article class="item-diretriz">
+            <h3>2. Informações do animal</h3>
+            <p>
+                Registre nome, idade aproximada, sexo, porte,
+                características e comportamento.
+            </p>
+        </article>
+
+        <article class="item-diretriz">
+            <h3>3. Escolha responsável</h3>
+            <p>
+                Converse com o interessado para verificar se
+                ele pode oferecer segurança, alimentação e cuidados.
+            </p>
+        </article>
+
+        <article class="item-diretriz">
+            <h3>4. Termo de doação</h3>
+            <p>
+                Registre os dados das partes, as informações
+                do animal e as responsabilidades acordadas.
+            </p>
+        </article>
+
+        <article class="item-diretriz">
+            <h3>5. Entrega segura</h3>
+            <p>
+                Planeje o transporte e oriente o novo tutor
+                sobre a adaptação do animal.
+            </p>
+        </article>
+
+        <article class="item-diretriz">
+            <h3>6. Regras locais</h3>
+            <p>
+                Verifique as exigências legais e sanitárias
+                aplicáveis à sua região.
+            </p>
+        </article>
+        
+    </section>
+  
+    
+<!-- DOCUMENTOS NECESSÁRIOS PARA A DOAÇÃO -->
+<section class="documentos-doacao">
+
+    <h2>Documentos que podem acompanhar a doação</h2>
+
+    <p class="introducao-documentos">
+        Alguns documentos ajudam a garantir uma transferência
+        mais organizada e fornecem informações importantes
+        para o novo responsável pelo animal.
+    </p>
+
+    <div class="lista-documentos">
+
+        <article class="item-documento">
+            <h3>1. Carteira de vacinação</h3>
+            <p>
+                Registra as vacinas que o animal já recebeu
+                e ajuda a acompanhar as próximas doses.
+            </p>
+        </article>
+
+        <article class="item-documento">
+            <h3>2. Histórico veterinário</h3>
+            <p>
+                Reúne informações sobre consultas, exames,
+                tratamentos e procedimentos realizados.
+            </p>
+        </article>
+
+        <article class="item-documento">
+            <h3>3. Termo de doação</h3>
+            <p>
+                Registra os dados do antigo responsável,
+                do novo tutor e do animal, formalizando
+                a transferência de responsabilidade.
+            </p>
+        </article>
+
+        <article class="item-documento">
+            <h3>4. Identificação do animal</h3>
+            <p>
+                Caso possua microchip ou registro,
+                disponibilize os dados para facilitar
+                sua identificação.
+            </p>
+        </article>
+
+    </div>
+
+    <p class="observacao-documentos">
+        <strong>Importante:</strong> nem todos esses documentos
+        são obrigatórios em todas as situações. As exigências
+        podem variar conforme as regras locais.
+    </p>
+
+</section>
+
+    
+<section class="cadastro-animal" id="cadastro">
+    <h2>Quero doar um animal</h2>
+
+    <p>
+        Preencha as informações abaixo para apresentar
+        o animal e ajudá-lo a encontrar um novo lar.
+    </p>
+
+    <form class="formulario-cadastro">
+
+        <div class="campo-formulario">
+            <label for="nome">Nome do animal</label>
+            <input type="text" id="nome" name="nome"
+                   placeholder="Ex: Auberto" required>
+        </div>
+
+        <div class="campo-formulario">
+            <label for="especie">Espécie</label>
+            <select id="especie" name="especie" required>
+                <option value="">Selecione</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+            </select>
+        </div>
+
+        <div class="campo-formulario">
+            <label for="idade">Idade aproximada</label>
+            <input type="text" id="idade" name="idade"
+                   placeholder="Ex: 2 anos" required>
+        </div>
+
+        <div class="campo-formulario">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" name="sexo" required>
+                <option value="">Selecione</option>
+                <option value="macho">Macho</option>
+                <option value="femea">Fêmea</option>
+                <option value="nao-informado">Não sei informar</option>
+            </select>
+        </div>
+
+        <div class="campo-formulario">
+            <label for="porte">Porte</label>
+            <select id="porte" name="porte" required>
+                <option value="">Selecione</option>
+                <option value="pequeno">Pequeno</option>
+                <option value="medio">Médio</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+
+        <div class="campo-formulario">
+            <label for="cidade">Cidade e estado</label>
+            <input type="text" id="cidade" name="cidade"
+                   placeholder="Ex: São PAulo - SP" required>
+        </div>
+
+        <div class="campo-formulario campo-completo">
+            <label for="saude">Informações de saúde</label>
+            <textarea id="saude" name="saude"
+                      placeholder="Informe vacinas, castração, tratamentos e outras informações..." required></textarea>
+        </div>
+
+        <div class="campo-formulario campo-completo">
+            <label for="descricao">Descrição do animal</label>
+            <textarea id="descricao" name="descricao"
+                      placeholder="Conte um pouco sobre a personalidade e comportamento do animal..."
+                      required></textarea>
+        </div>
+
+    <div class="campo-formulario">
+            <label for="foto-animal">Foto do animal</label>
+
+             <input
+                    type="file"
+                    id="foto-animal"
+                    name="foto"
+                    accept="image/*"
+                    required
+             >
+
+        <div class="visualizacao-foto">
+            <img id="preview-foto" alt="Foto selecionada do animal">
+
+                <p id="texto-preview">
+            A foto selecionada aparecerá aqui.
+                </p>
+        </div>
+    </div>
+
+        <div class="campo-formulario campo-completo">
+            <label for="contato">Contato do responsável</label>
+            <input type="text" id="contato" name="contato"
+                   placeholder="Telefone ou WhatsApp" required>
+        </div>
+
+        <button type="submit">Cadastrar animal</button>
+        <p id="mensagem-cadastro" role="status"></p>
+
+    </form>
+</section>
+
+</main>
+
+<script src="js/script.js" defer></script>
+
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calendário de Vacinação Pet</title>
+  <link rel="stylesheet" href="css/style_calendario.css">
+</head>
+<body>
+
+  <div class="marca">
+    <img src="img/logo.png" alt="Logo do projeto: bandana verde com patinha">
+    <h1>Calendário</h1>
+  </div>
+  <p class="subtitulo">Vacinação gratuita e campanhas para pets</p>
+
+  <div class="layout">
+    <section class="calendario" aria-label="Calendário de vacinação pet">
+      <div class="cabecalho">
+        <button class="nav" id="anterior" aria-label="Mês anterior">←</button>
+        <div class="titulo" id="titulo"></div>
+        <button class="nav" id="proximo" aria-label="Próximo mês">→</button>
+      </div>
+      <div class="grade" id="grade"></div>
+      <div class="legenda" id="legenda"></div>
+    </section>
+  </div>
+
+  <div class="popup" id="popup" role="tooltip"></div>
+
+  <script src="js/script_calendario.js"></script>
+</body>
+</html>
