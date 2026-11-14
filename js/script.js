@@ -1,6 +1,6 @@
 
 // ==========================================
-// CARROSSEL DE ANIMAIS
+// 1. CARROSSEL DE ANIMAIS
 // ==========================================
 
 const janelaCarrossel = document.querySelector(".janela-carrossel");
@@ -111,7 +111,7 @@ if (janelaCarrossel) {
 
 
 // ==========================================
-// PRÉ-VISUALIZAÇÃO DA FOTO DO ANIMAL
+// 2. PRÉ-VISUALIZAÇÃO DA FOTO DO ANIMAL
 // ==========================================
 
 const campoFoto = document.querySelector("#foto-animal");
@@ -147,7 +147,7 @@ if (campoFoto && previewFoto && textoPreview) {
 
 
 // ==========================================
-// PRÉ-VISUALIZAÇÃO DA FOTO DO ITEM
+// 3. PRÉ-VISUALIZAÇÃO DA FOTO DO ITEM
 // ==========================================
 
 const fotoItem = document.querySelector("#foto-item");
@@ -183,7 +183,7 @@ if (fotoItem && previewItem && textoPreviewItem) {
 
 
 // ==========================================
-// VALIDAÇÃO DO FORMULÁRIO DE DOAÇÃO DE ANIMAL
+// 4. VALIDAÇÃO DO FORMULÁRIO DE DOAÇÃO
 // ==========================================
 
 const formularioAnimal = document.querySelector(
@@ -206,6 +206,7 @@ if (formularioAnimal && mensagem && campoFoto) {
         const arquivo = campoFoto.files[0];
 
         if (!arquivo || !arquivo.type.startsWith("image/")) {
+
             mensagem.textContent =
                 "Selecione uma imagem válida do animal.";
 
@@ -216,6 +217,7 @@ if (formularioAnimal && mensagem && campoFoto) {
         const tamanhoMaximo = 5 * 1024 * 1024;
 
         if (arquivo.size > tamanhoMaximo) {
+
             mensagem.textContent =
                 "A imagem deve ter no máximo 5 MB.";
 
@@ -229,3 +231,135 @@ if (formularioAnimal && mensagem && campoFoto) {
         mensagem.style.color = "#3F6748";
     });
 }
+
+
+// ==========================================
+// 5. CENTRAL DE SUPORTE DOACÃO
+// ==========================================
+
+// Capturando os elementos HTML
+
+const formPesquisa = document.querySelector("#search-form");
+const inputPesquisa = document.querySelector("#search-input");
+
+const perguntas = document.querySelectorAll(".faq-item");
+const cartoesAjuda = document.querySelectorAll(".help-card");
+
+const semResultados = document.querySelector("#no-results");
+
+
+// ==========================================
+// 6. NORMALIZAÇÃO DO TEXTO DA PESQUISA
+// ==========================================
+
+function normalizeText(text) {
+
+    return text
+        .toLocaleLowerCase("pt-BR")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+}
+
+
+// ==========================================
+// 7. FILTRO DA CENTRAL DE SUPORTE
+// ==========================================
+
+function filterHelp(term) {
+
+    const query = normalizeText(term.trim());
+
+    let perguntasVisiveis = 0;
+    let cartoesVisiveis = 0;
+
+    // Filtrando perguntas frequentes
+
+    perguntas.forEach(function(item) {
+
+        const texto = normalizeText(
+            item.textContent + " " +
+            (item.dataset.keywords || "")
+        );
+
+        const corresponde = !query || texto.includes(query);
+
+        item.hidden = !corresponde;
+
+        if (corresponde) {
+            perguntasVisiveis++;
+        }
+    });
+
+
+    // Filtrando cartões de ajuda
+
+    cartoesAjuda.forEach(function(cartao) {
+
+        const texto = normalizeText(
+            cartao.textContent + " " +
+            (cartao.dataset.keywords || "")
+        );
+
+        const corresponde = !query || texto.includes(query);
+
+        cartao.hidden = !corresponde;
+
+        if (corresponde) {
+            cartoesVisiveis++;
+        }
+    });
+
+
+    // Mensagem quando não existem resultados
+
+    if (semResultados) {
+
+        semResultados.hidden =
+            perguntasVisiveis > 0 || cartoesVisiveis > 0;
+    }
+}
+
+
+// ==========================================
+// 8. EVENTOS DA PESQUISA
+// ==========================================
+
+if (formPesquisa && inputPesquisa) {
+
+    // Pesquisa ao enviar o formulário
+
+    formPesquisa.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        filterHelp(inputPesquisa.value);
+
+        const secaoAjuda = document.querySelector("#ajuda");
+
+        if (secaoAjuda) {
+            secaoAjuda.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+
+
+    // Pesquisa enquanto o usuário digita
+
+    inputPesquisa.addEventListener("input", function() {
+
+        filterHelp(inputPesquisa.value);
+    });
+
+
+    // Inicialização da pesquisa
+
+    filterHelp("");
+}
+
+
+// ==========================================
+// 9. MENSAGEM DE INICIALIZAÇÃO
+// ==========================================
+
+console.log("JavaScript do DOACÃO carregado com sucesso!");
