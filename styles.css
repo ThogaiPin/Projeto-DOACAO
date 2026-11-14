@@ -1,0 +1,823 @@
+
+/* =========================================
+   1. CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F8F5ED;
+    color: #35483A;
+}
+
+/* =========================================
+   2. CABEÇALHO E IDENTIDADE
+========================================= */
+
+header.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 30px;
+    background-color: #DCE7D5;
+    box-shadow: 0 2px 10px rgba(53, 72, 58, 0.08);
+}
+
+.logo-link {
+    flex-shrink: 0;
+}
+
+.logo-link img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.identidade {
+    flex: 1;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #3F6748;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #35483A;
+}
+
+/* =========================================
+   3. MENU DE NAVEGAÇÃO
+========================================= */
+
+.menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu-principal a {
+    color: #35483A;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.menu-principal a:hover {
+    color: #527B57;
+    text-decoration: underline;
+}
+
+/* =========================================
+   4. CONTEÚDO PRINCIPAL
+========================================= */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 140px 20px 30px;
+}
+
+section {
+    background-color: #FFFFFF;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid #DCE7D5;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(53, 72, 58, 0.05);
+}
+
+h2 {
+    color: #3F6748;
+}
+
+/* =========================================
+   5. APRESENTAÇÃO INICIAL
+========================================= */
+
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    min-height: auto;
+    padding: 30px;
+}
+
+.texto-apresentacao {
+    width: 100%;
+    text-align: center;
+}
+
+.texto-apresentacao h2 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.texto-apresentacao p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.texto-sobre-auberto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.texto-sobre-auberto h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.texto-sobre-auberto p {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.imagem-apresentacao {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-apresentacao img {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+}
+
+/* =========================================
+   6. BOTÕES
+========================================= */
+
+button {
+    background-color: #527B57;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 8px 0 0;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #3F6748;
+}
+
+.botoes-apresentacao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.botoes-apresentacao button {
+    margin: 8px 0 0;
+}
+
+/* =========================================
+   7. SEÇÃO COMO AJUDAR
+========================================= */
+
+.como-ajudar {
+    text-align: center;
+}
+
+.como-ajudar h2 {
+    font-size: 30px;
+    margin-top: 0;
+}
+
+.descricao-como-ajudar {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.cartoes-ajuda {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.cartao-ajuda {
+    flex: 1;
+    padding: 25px;
+    background-color: #F8F5ED;
+    border: 2px solid #DCE7D5;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartao-ajuda h3 {
+    color: #3F6748;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.cartao-ajuda p {
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.cartao-ajuda button {
+    margin-top: 15px;
+}
+
+/* =========================================
+   8. CARROSSEL DE ADOÇÃO
+========================================= */
+
+.carrossel-adocao {
+    background-color: #F8F5ED;
+    text-align: center;
+    overflow: hidden;
+}
+
+.titulo-carrossel {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.subtitulo-carrossel {
+    color: #527B57;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.titulo-carrossel h2 {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.titulo-carrossel > p:last-child {
+    line-height: 1.6;
+}
+
+.janela-carrossel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.trilho-carrossel {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    transition: transform 0.5s ease;
+}
+
+.cartao-animal {
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 2px solid #DCE7D5;
+    border-radius: 16px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-animal > img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.informacoes-animal {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.etiqueta-demonstracao {
+    background-color: #DCE7D5;
+    color: #35483A;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 9px;
+    border-radius: 20px;
+}
+
+.informacoes-animal h3 {
+    color: #3F6748;
+    font-size: 22px;
+    margin: 12px 0 8px;
+}
+
+.informacoes-animal p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 4px 0;
+}
+
+.cidade-animal {
+    color: #647166;
+}
+
+.informacoes-animal button {
+    margin-top: auto;
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+.informacoes-animal button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.controles-carrossel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 25px;
+}
+
+button.seta-carrossel {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.indicador-carrossel {
+    min-width: 55px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.aviso-demonstracao {
+    margin: 20px 0 0;
+    font-size: 12px;
+    color: #647166;
+}
+
+/* =========================================
+   9. DIRETRIZES PARA DOAÇÃO
+========================================= */
+
+.diretrizes h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.diretrizes > p {
+    color: #647166;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.lista-diretrizes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.item-diretriz {
+    background-color: #F8F5ED;
+    border: 1px solid #DCE7D5;
+    border-left: 5px solid #527B57;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-diretriz:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 14px rgba(53, 72, 58, 0.12);
+}
+
+.item-diretriz h3 {
+    color: #3F6748;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.item-diretriz p {
+    color: #647166;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   10. DOCUMENTOS PARA DOAÇÃO
+========================================= */
+
+.documentos-doacao {
+    background-color: #FFFFFF;
+    padding: 40px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1200px;
+    border: 1px solid #DCE7D5;
+    border-radius: 20px;
+}
+
+.documentos-doacao h2 {
+    color: #3F6748;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.introducao-documentos {
+    color: #647166;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.lista-documentos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.item-documento {
+    background-color: #F8F5ED;
+    border: 1px solid #DCE7D5;
+    border-left: 6px solid #527B57;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.item-documento h3 {
+    color: #3F6748;
+    margin-top: 0;
+}
+
+.item-documento p {
+    color: #647166;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.observacao-documentos {
+    color: #647166;
+    background-color: #F8F5ED;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 25px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   11. FORMULÁRIOS DE DOAÇÃO
+========================================= */
+
+.cadastro-animal h2,
+.cadastro-itens h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cadastro-animal > p,
+.cadastro-itens > p {
+    color: #647166;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.formulario-cadastro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo-formulario label {
+    color: #35483A;
+    font-weight: bold;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DCE7D5;
+    border-radius: 8px;
+    background-color: #F8F5ED;
+    color: #35483A;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.campo-formulario textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: #527B57;
+    box-shadow: 0 0 0 2px rgba(82, 123, 87, 0.12);
+}
+
+.formulario-cadastro button {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+    background-color: #527B57;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.formulario-cadastro button:hover {
+    background-color: #3F6748;
+}
+
+/* =========================================
+   12. PRÉ-VISUALIZAÇÃO DAS FOTOS
+========================================= */
+
+.visualizacao-foto {
+    margin-top: 15px;
+    text-align: center;
+    background-color: #F8F5ED;
+    border: 1px dashed #527B57;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#preview-foto,
+#preview-item {
+    display: none;
+    max-width: 100%;
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: auto;
+}
+
+#texto-preview,
+#texto-preview-item {
+    color: #647166;
+    margin: 0;
+}
+
+/* =========================================
+   13. DOAÇÃO DE ITENS
+========================================= */
+
+.apresentacao-itens {
+    text-align: center;
+}
+
+.apresentacao-itens h2 {
+    margin-top: 0;
+    font-size: 30px;
+}
+
+.apresentacao-itens p {
+    max-width: 750px;
+    margin: 12px auto;
+    color: #647166;
+    line-height: 1.7;
+}
+
+.itens-aceitos {
+    text-align: center;
+}
+
+.itens-aceitos h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.itens-aceitos > p {
+    color: #647166;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.lista-itens {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.card-item {
+    min-width: 0;
+    padding: 20px;
+    background-color: #F8F5ED;
+    border: 1px solid #DCE7D5;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.card-item > img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto 15px;
+}
+
+.card-item h3 {
+    color: #3F6748;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.card-item p {
+    color: #647166;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   14. RODAPÉ
+========================================= */
+
+footer {
+    background-color: #DCE7D5;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================================
+   15. RESPONSIVIDADE - TABLETS
+========================================= */
+
+@media (max-width: 800px) {
+
+    header.cabecalho {
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    .menu-principal {
+        gap: 12px;
+    }
+
+    .cartao-animal {
+        flex-basis: calc((100% - 20px) / 2);
+    }
+}
+
+/* =========================================
+   16. RESPONSIVIDADE - CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    header.cabecalho {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .logo-link img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .menu-principal {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    main {
+        padding: 25px 15px 30px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .lista-diretrizes,
+    .lista-documentos,
+    .lista-itens {
+        grid-template-columns: 1fr;
+    }
+
+    .documentos-doacao {
+        padding: 25px 18px;
+        width: 95%;
+    }
+
+    .formulario-cadastro {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .cartoes-ajuda {
+        flex-direction: column;
+    }
+
+    .cartao-animal {
+        flex-basis: 100%;
+    }
+
+    .cartao-animal > img {
+        height: 230px;
+    }
+
+    .titulo-carrossel h2 {
+        font-size: 25px;
+    }
+
+    .carrossel-adocao {
+        padding: 22px;
+    }
+
+    .apresentacao-itens h2 {
+        font-size: 25px;
+    }
+
+    .itens-aceitos h2 {
+        font-size: 24px;
+    }
+
+    .card-item > img {
+        height: 210px;
+    }
+}
+
+/* =========================================
+   17. ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .trilho-carrossel,
+    .item-diretriz,
+    button {
+        transition: none;
+    }
+}
