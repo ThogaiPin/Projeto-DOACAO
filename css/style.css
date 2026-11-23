@@ -744,6 +744,256 @@ button.seta-carrossel {
 
 
 /* =========================================
+   PÁGINA DE ADOÇÃO
+========================================= */
+
+/* Apresentação */
+
+.apresentacao-adocao {
+    text-align: center;
+    padding: 45px 25px;
+    background-color: #DCE7D5;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 1100px;
+}
+
+.apresentacao-adocao h2 {
+    color: #3F6748;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.apresentacao-adocao p {
+    color: #35483A;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Área dos animais */
+
+.animais-adocao {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.animais-adocao h2 {
+    color: #3F6748;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.animais-adocao > p {
+    color: #647166;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Lista de cartões */
+
+.lista-animais {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Cartão individual do animal */
+
+.cartao-adocao {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(53, 72, 58, 0.12);
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.cartao-adocao img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background-color: var(--branco);
+    display: block;
+}
+
+.cartao-adocao h3 {
+    color: #3F6748;
+    margin: 15px 10px 8px;
+}
+
+.cartao-adocao p {
+    color: #647166;
+    margin: 8px 15px;
+    line-height: 1.5;
+}
+
+.cartao-adocao button {
+    margin-top: 12px;
+}
+
+/* Responsividade */
+
+@media (max-width: 800px) {
+    .lista-animais {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .apresentacao-adocao {
+        padding: 30px 18px;
+        margin: 20px 15px;
+    }
+
+    .apresentacao-adocao h2 {
+        font-size: 24px;
+    }
+
+    .lista-animais {
+        grid-template-columns: 1fr;
+    }
+
+    .animais-adocao {
+        padding: 15px;
+    }
+}
+
+/* =========================================
+   BOTÃO PARA REMOVER CADASTRO DE ANIMAL
+========================================= */
+
+.cartao-adocao .botao-remover {
+    background-color: #B3261E;
+    color: #FFFFFF;
+    margin: 10px 5px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cartao-adocao .botao-remover:hover {
+    background-color: #8C1D18;
+}
+
+
+/* =========================================
+   JANELA DE DETALHES DO ANIMAL
+========================================= */
+
+.modal-animal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.conteudo-modal {
+    position: relative;
+    background-color: var(--creme);
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.conteudo-modal > img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background-color: var(--branco);
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+.conteudo-modal h2 {
+    color: var(--verde-titulo);
+    margin-bottom: 20px;
+}
+
+/* Informações dentro da janela */
+.conteudo-modal .informacoes-animal {
+    padding: 0;
+    display: block;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.conteudo-modal .informacoes-animal p {
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 8px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+/* Botão de fechar */
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    background-color: var(--verde-medio);
+}
+
+/* Botão de interesse */
+#botao-interesse {
+    background-color: var(--verde-medio);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    padding: 13px 22px;
+    margin: 10px 0 0;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#botao-interesse:hover {
+    background-color: var(--verde-titulo);
+}
+
+/* Janela em celulares */
+@media (max-width: 600px) {
+    .conteudo-modal {
+        padding: 22px 18px;
+    }
+
+    .conteudo-modal > img {
+        max-height: 210px;
+    }
+}
+
+
+/* =========================================
    14. RODAPÉ DAS PÁGINAS PRINCIPAIS
 ========================================= */
 
