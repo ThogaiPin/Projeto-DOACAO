@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOACÃO | Adoção</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo DOACão">
+        </a>
+
+        <div class="identidade">
+            <h1>DOACÃO</h1>
+            <p>Cãonectando sonhos, presenteando famílias...</p>
+        </div>
+
+        <nav class="menu-principal">
+            <a href="index.html">Início</a>
+            <a href="suporte.html">Como ajudar</a>
+            <a href="adoção.html">Adoção</a>
+            <a href="doação.html">Doações</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- APRESENTAÇÃO DA PÁGINA -->
+        <section class="apresentacao-adocao">
+
+            <h2> Encontre seu novo amigo de quatro patas! </h2>
+
+            <p> Existem muitos animais esperando por uma oportunidade
+                de encontrar um lar cheio de carinho e cuidado.
+                Conheça nossos amigos e transforme uma vida!
+            </p>
+
+        </section> 
+
+        <!-- ANIMAIS DISPONÍVEIS -->
+        <section class="animais-adocao" id="adocao">
+             
+            <h2> Animais disponíveis para adoção </h2>
+
+            <p> Conheça alguns dos animais que estão em busca de um lar amoroso.
+                Cada um deles tem uma história única e está ansioso para encontrar 
+                uma família que os acolha com carinho. 
+            </p>
+
+            <div class="lista-animais" id="lista-animais">
+
+                <!-- Os animais cadastrados aparecerão aqui -->
+
+            </div>
+            
+            <div class="lista-animais" id="lista-animais">
+
+</div>
+        </section>
+
+
+<!-- Janela com os detalhes do animal -->
+<div id="modal-animal" class="modal-animal">
+    <div class="conteudo-modal">
+        <button type="button" id="fechar-modal" class="fechar-modal">
+            &times;
+        </button>
+
+        <img id="modal-foto" src="" alt="Foto do animal">
+
+        <h2 id="modal-nome"></h2>
+
+        <div class="informacoes-animal">
+            <p id="modal-especie"></p>
+            <p id="modal-idade"></p>
+            <p id="modal-sexo"></p>
+            <p id="modal-porte"></p>
+            <p id="modal-cidade"></p>
+            <p id="modal-saude"></p>
+            <p id="modal-descricao"></p>
+            <p id="modal-contato"></p>
+        </div>
+
+        <button type="button" id="botao-interesse">
+            Tenho interesse em adotar
+        </button>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer id="contato">
+        <p>© 2026 DOACÃO. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
