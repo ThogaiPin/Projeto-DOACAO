@@ -182,8 +182,9 @@ if (fotoItem && previewItem && textoPreviewItem) {
 }
 
 
+
 // ==========================================
-// 4. VALIDAÇÃO DO FORMULÁRIO DE DOAÇÃO
+// 4. CADASTRO E ARMAZENAMENTO DOS ANIMAIS
 // ==========================================
 
 const formularioAnimal = document.querySelector(
@@ -198,12 +199,16 @@ if (formularioAnimal && mensagem && campoFoto) {
 
         event.preventDefault();
 
+        // Verifica se todos os campos obrigatórios foram preenchidos
+
         if (!formularioAnimal.checkValidity()) {
             formularioAnimal.reportValidity();
             return;
         }
 
         const arquivo = campoFoto.files[0];
+
+        // Verifica se existe uma foto válida
 
         if (!arquivo || !arquivo.type.startsWith("image/")) {
 
@@ -214,24 +219,98 @@ if (formularioAnimal && mensagem && campoFoto) {
             return;
         }
 
-        const tamanhoMaximo = 5 * 1024 * 1024;
+        // Limite de tamanho da foto: 1,5 MB
+        // O localStorage possui espaço limitado.
+
+        const tamanhoMaximo = 1.5 * 1024 * 1024;
 
         if (arquivo.size > tamanhoMaximo) {
 
             mensagem.textContent =
-                "A imagem deve ter no máximo 5 MB.";
+                "A imagem deve ter no máximo 1,5 MB.";
 
             mensagem.style.color = "#B3261E";
             return;
         }
 
-        mensagem.textContent =
-            "Cadastro validado com sucesso! 🐾";
+        // Lê a imagem e transforma em texto
 
-        mensagem.style.color = "#3F6748";
+        const leitor = new FileReader();
+
+        leitor.onload = function() {
+
+            // Captura os dados preenchidos no formulário
+
+            const novoAnimal = {
+                id: Date.now(),
+                nome: document.querySelector("#nome").value,
+                especie: document.querySelector("#especie").value,
+                idade: document.querySelector("#idade").value,
+                sexo: document.querySelector("#sexo").value,
+                porte: document.querySelector("#porte").value,
+                cidade: document.querySelector("#cidade").value,
+                saude: document.querySelector("#saude").value,
+                descricao: document.querySelector("#descricao").value,
+                contato: document.querySelector("#contato").value,
+                foto: leitor.result
+            };
+
+            try {
+
+                // Recupera os animais já cadastrados
+
+                let animais = JSON.parse(
+                    localStorage.getItem("animaisDOACAO")
+                ) || [];
+
+                // Adiciona o novo animal
+
+                animais.push(novoAnimal);
+
+                // Salva novamente no navegador
+
+                localStorage.setItem(
+                    "animaisDOACAO",
+                    JSON.stringify(animais)
+                );
+
+                mensagem.textContent =
+                    "Animal cadastrado com sucesso! 🐾";
+
+                mensagem.style.color = "#3F6748";
+
+                // Limpa o formulário
+
+                formularioAnimal.reset();
+
+                // Limpa a pré-visualização da foto
+
+                previewFoto.removeAttribute("src");
+                previewFoto.style.display = "none";
+                textoPreview.style.display = "block";
+
+            } catch (erro) {
+
+                mensagem.textContent =
+                    "Não foi possível salvar o cadastro. Verifique o espaço disponível no navegador.";
+
+                mensagem.style.color = "#B3261E";
+
+                console.error("Erro ao salvar animal:", erro);
+            }
+        };
+
+        leitor.onerror = function() {
+
+            mensagem.textContent =
+                "Não foi possível carregar a foto do animal.";
+
+            mensagem.style.color = "#B3261E";
+        };
+
+        leitor.readAsDataURL(arquivo);
     });
 }
-
 
 // ==========================================
 // 5. CENTRAL DE SUPORTE DOACÃO
@@ -363,3 +442,196 @@ if (formPesquisa && inputPesquisa) {
 // ==========================================
 
 console.log("JavaScript do DOACÃO carregado com sucesso!");
+
+
+ 
+ // ==========================================
+ // 10. EXIBIR E REMOVER ANIMAIS DA ADOÇÃO
+ // ==========================================
+
+const listaAnimais = document.querySelector("#lista-animais");
+
+if (listaAnimais) {
+
+    function carregarAnimais() {
+
+        listaAnimais.innerHTML = "";
+
+        let animais = [];
+
+        try {
+            animais = JSON.parse(
+                localStorage.getItem("animaisDOACAO")
+            ) || [];
+        } catch (erro) {
+            console.error("Erro ao recuperar animais:", erro);
+        }
+
+        if (animais.length === 0) {
+            listaAnimais.textContent =
+                "Ainda não temos animais cadastrados para adoção.";
+            return;
+        }
+
+        animais.forEach(function(animal) {
+
+            const cartao = document.createElement("article");
+            cartao.classList.add("cartao-adocao");
+
+            // Foto
+            const foto = document.createElement("img");
+            foto.src = animal.foto;
+            foto.alt = "Foto de " + animal.nome;
+
+            // Nome
+            const nome = document.createElement("h3");
+            nome.textContent = animal.nome;
+
+            // Espécie
+            const especie = document.createElement("p");
+            especie.textContent =
+                animal.especie === "cachorro" ? "Cachorro" : "Gato";
+
+            // Idade
+            const idade = document.createElement("p");
+            idade.textContent = "Idade: " + animal.idade;
+
+            // Sexo
+            const sexo = document.createElement("p");
+            sexo.textContent = "Sexo: " + animal.sexo;
+
+            // Porte
+            const porte = document.createElement("p");
+            porte.textContent = "Porte: " + animal.porte;
+
+            // Cidade
+            const cidade = document.createElement("p");
+            cidade.textContent = animal.cidade;
+
+            // Botão conhecer pet
+            const botao = document.createElement("button");
+            botao.type = "button";
+            botao.textContent = "Conhecer pet";
+
+            // ABRIR DETALHES DO ANIMAL
+            botao.addEventListener("click", function() {
+
+                document.querySelector("#modal-foto").src = animal.foto;
+                document.querySelector("#modal-foto").alt =
+                    "Foto de " + animal.nome;
+
+                document.querySelector("#modal-nome").textContent =
+                    animal.nome;
+
+                document.querySelector("#modal-especie").textContent =
+                    "Espécie: " + animal.especie;
+
+                document.querySelector("#modal-idade").textContent =
+                    "Idade: " + animal.idade;
+
+                document.querySelector("#modal-sexo").textContent =
+                    "Sexo: " + animal.sexo;
+
+                document.querySelector("#modal-porte").textContent =
+                    "Porte: " + animal.porte;
+
+                document.querySelector("#modal-cidade").textContent =
+                    "Cidade: " + animal.cidade;
+
+                document.querySelector("#modal-saude").textContent =
+                    "Saúde: " + animal.saude;
+
+                document.querySelector("#modal-descricao").textContent =
+                    "Descrição: " + animal.descricao;
+
+                document.querySelector("#modal-contato").textContent =
+                    "Contato: " + animal.contato;
+
+                document.querySelector("#modal-animal").style.display = "flex";
+            });
+
+            // Botão remover cadastro
+            const botaoRemover = document.createElement("button");
+            botaoRemover.type = "button";
+            botaoRemover.textContent = "Remover cadastro";
+            botaoRemover.classList.add("botao-remover");
+
+            botaoRemover.addEventListener("click", function() {
+
+                const confirmar = confirm(
+                    "Tem certeza que deseja remover " +
+                    animal.nome + " do cadastro?"
+                );
+
+                if (confirmar) {
+
+                    const animaisAtualizados = animais.filter(
+                        function(item) {
+                            return item.id !== animal.id;
+                        }
+                    );
+
+                    try {
+                        localStorage.setItem(
+                            "animaisDOACAO",
+                            JSON.stringify(animaisAtualizados)
+                        );
+
+                        carregarAnimais();
+
+                    } catch (erro) {
+                        alert("Não foi possível remover o cadastro.");
+                        console.error(erro);
+                    }
+                }
+            });
+
+            // Adiciona os elementos ao cartão
+            cartao.appendChild(foto);
+            cartao.appendChild(nome);
+            cartao.appendChild(especie);
+            cartao.appendChild(idade);
+            cartao.appendChild(sexo);
+            cartao.appendChild(porte);
+            cartao.appendChild(cidade);
+            cartao.appendChild(botao);
+            cartao.appendChild(botaoRemover);
+
+            listaAnimais.appendChild(cartao);
+
+        });
+    }
+
+    // Carrega os animais ao abrir a página
+    carregarAnimais();
+}
+
+
+// ==========================================
+// 11. ABRIR E FECHAR JANELA DO ANIMAL
+// ==========================================
+
+const modalAnimal = document.querySelector("#modal-animal");
+const fecharModal = document.querySelector("#fechar-modal");
+
+if (modalAnimal && fecharModal) {
+
+    // Fechar pelo botão X
+    fecharModal.addEventListener("click", function() {
+        modalAnimal.style.display = "none";
+    });
+
+    // Fechar clicando fora do conteúdo
+    modalAnimal.addEventListener("click", function(event) {
+        if (event.target === modalAnimal) {
+            modalAnimal.style.display = "none";
+        }
+    });
+
+    // Fechar apertando a tecla ESC
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            modalAnimal.style.display = "none";
+        }
+    });
+}
